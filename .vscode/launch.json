@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "linux": {
+                "name": "linux",
+                "type": "cppdbg",
+                "request": "launch",
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb",
+                "program": "${workspaceFolder}/build/main"
+            },
+            "osx": {
+                "name": "osx",
+                "type": "cppdbg",
+                "request": "launch",
+                "MIMode": "lldb",
+                "miDebuggerPath": "lldb-mi",
+                "program": "${workspaceFolder}/build/main"
+            },
+            "windows": {
+                "name": "windows",
+                "type": "cppdbg",
+                "request": "launch",
+                "MIMode": "gdb",
+                "miDebuggerPath": "gdb.exe",
+                "program": "${workspaceFolder}/build/main.exe"
+            },
+            "preLaunchTask": "build"
+        }
+    ]
+}
