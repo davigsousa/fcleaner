@@ -1,7 +1,7 @@
 #include "filehandler.h"
 
 
-FileHandler::FileHandler(std::vector<std::string> should_be_removed) {
+FileHandler::FileHandler(std::set<std::string> should_be_removed) {
     this->should_be_removed = should_be_removed;
 }
 
@@ -28,10 +28,5 @@ void FileHandler::browser_directory(const fs::path& path) {
 }
 
 bool FileHandler::folder_should_be_removed(std::string str) {
-    for (std::string s : should_be_removed) {
-        if (s == str) {
-            return true;
-        }
-    }
-    return false;
+    return should_be_removed.find(str) != should_be_removed.end();
 }

@@ -6,9 +6,9 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    std::vector<std::string> should_be_removed;
+    std::set<std::string> should_be_removed;
     for (int i = 1; i < argc; i++) {
-        should_be_removed.push_back(argv[i]);
+        should_be_removed.insert(argv[i]);
     }
 
     FileHandler file_handler(should_be_removed);
